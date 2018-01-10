@@ -8,15 +8,9 @@
 </template>
 <script>
   export default {
-    data() {
+    data () {
       return {
-        lists:[{
-          id:1,
-          title:"test title 1"
-        },{
-          id:2,
-          title:"test title 2"
-        }]
+        lists: [{id: 1, title: 'test title 1'}, {id: 2, title: 'test title 2'}]
       }
     }
   }
