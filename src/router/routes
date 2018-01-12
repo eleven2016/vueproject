@@ -1,6 +1,6 @@
 // 引用模板
 import index from '../page/index.vue'
-import mainBorder from '../page/main.vue'
+import mainBorder from '../page/mainboard.vue'
 // 配置路由
 export default [
   {
@@ -8,8 +8,8 @@ export default [
     component: index,
     children: [
       {
-        path: '/',
-        name: 'main',
+        path: '/mainBorder',
+        name: 'mainBorder',
         component: mainBorder
       }
     ]

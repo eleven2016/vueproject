@@ -6,11 +6,14 @@
       </el-header>
       <el-container>
         <el-aside style="height: 840px;width: 200px">
-          导航栏
+          <router-link to="mainBorder" tag="li">
+            <a>进入主操作界面</a>
+          </router-link>
         </el-aside>
         <el-container>
           <el-main>
-            <router-view name="main"></router-view>
+            操作区
+            <router-view name="mainContainer"></router-view>
           </el-main>
           <el-footer>
             @copy right long
