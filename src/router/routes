@@ -1,0 +1,17 @@
+// 引用模板
+import index from '../page/index.vue'
+import mainBorder from '../page/main.vue'
+// 配置路由
+export default [
+  {
+    path: '/',
+    component: index,
+    children: [
+      {
+        path: '/',
+        name: 'main',
+        component: mainBorder
+      }
+    ]
+  }
+]
