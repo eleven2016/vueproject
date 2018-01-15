@@ -1,17 +1,14 @@
 // 引用模板
-import index from '../page/index.vue'
-import mainBorder from '../page/mainboard.vue'
+import menus from '@/config/menu-config'
+var routes = []
+menus.forEach((item) => {
+  item.sub.forEach((sub) => {
+    routes.push({
+      path: `/${sub.componentName}`,
+      name: sub.componentName,
+      component: () => import(`@/components/${sub.componentName}`)
+    })
+  })
+})
 // 配置路由
-export default [
-  {
-    path: '/',
-    component: index,
-    children: [
-      {
-        path: '/mainBorder',
-        name: 'mainBorder',
-        component: mainBorder
-      }
-    ]
-  }
-]
+export default routes

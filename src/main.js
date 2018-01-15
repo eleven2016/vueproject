@@ -12,11 +12,18 @@ import routes from './router/routes'
 // 引入ElementUI及其样式
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'normalize.css'
+import 'vue-awesome/icons'
+import Icon from 'vue-awesome/components/Icon'
 
 // 使用VueRouter
 Vue.use(VueRouter)
 // 使用ElementUI
 Vue.use(ElementUI)
+
+Vue.component('icon', Icon)
+
+Vue.config.productionTip = false
 
 // 使用自定义的路由规则
 const router = new VueRouter({routes})
@@ -27,6 +34,8 @@ new Vue({
   el: '#app',
   // 使用路由
   router,
+  template: '<App/>',
+  components: { App },
   // 使用render函数进行页面渲染,此处渲染的是App.vue模块
   render: (h) => h(App)
 })
