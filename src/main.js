@@ -20,9 +20,9 @@ import Icon from 'vue-awesome/components/Icon'
 Vue.use(VueRouter)
 // 使用ElementUI
 Vue.use(ElementUI)
-
+// 定义全局的组件
 Vue.component('icon', Icon)
-
+// 设置为 false 以阻止 vue 在启动时生成生产提示。
 Vue.config.productionTip = false
 
 // 使用自定义的路由规则

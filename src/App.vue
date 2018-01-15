@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <el-container>
+    <el-container :span="16">
       <el-header class="header">
-        <vheader></vheader>
+        <container-header></container-header>
       </el-header>
       <el-container>
         <el-aside width="200px">
@@ -12,27 +12,31 @@
           <el-main>
             <router-view></router-view>
           </el-main>
-          <el-footer>Footer</el-footer>
+          <el-footer>
+            <container-footer></container-footer>
+          </el-footer>
         </el-container>
       </el-container>
     </el-container>
   </div>
 </template>
 <script>
-  import Header from '@/components/Header'
+  // 引入本页面使用到的组件
+  import Header from '@/components/Header.vue'
   import NavMenu from '@/components/NavMenu'
+  import Footer from '@/components/Footer'
   export default {
+    // 定义本组件的名称
     name: 'app',
+    // 定义本组件内使用到的组件的别名
     components: {
       'navmenu': NavMenu,
-      'vheader': Header
+      'container-header': Header,
+      'container-footer': Footer
     }
   }
 </script>
-<style>
-.header {
-background-color: #409EFF;
-color: #fff;
-line-height: 60px;
-}
+<!-- 导入自定义的css文件 -->
+<style scoped>
+  @import "style/app.css";
 </style>

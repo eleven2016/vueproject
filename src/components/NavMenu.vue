@@ -1,53 +1,34 @@
 <template>
   <el-row class="tac">
     <el-col :span="24">
-      <el-menu
-        class="el-menu-vertical-demo"
-        unique-opened
-        router
-        @open="handleOpen"
-        @close="handleClose"
-        background-color="#545c64"
-        text-color="#fff"
-        active-text-color="#ffd04b">
-
-        <el-submenu v-for="item in menu" :index="item.id" :key="item.id">
+      <el-menu class="el-menu-vertical-demo nav-menu"    unique-opened  router>
+        <el-submenu v-for="item in menus" :index="item.id" :key="item.id">
           <template slot="title">
-            <icon name="windows"></icon><span v-text="item.name"></span>
+            <span v-text="item.text" class="el-icon-menu"></span>
           </template>
-          <el-menu-item-group class="over-hide" v-for="sub in item.sub" :key="sub.componentName">
-            <el-menu-item :index="sub.componentName" v-text="sub.name">
-            </el-menu-item>
+          <el-menu-item-group class="over-hide" v-for="sub in item.subMenu" :key="sub.id">
+            <el-menu-item :index="sub.id" v-text="sub.text" class="el-icon-arrow-right"></el-menu-item>
           </el-menu-item-group>
         </el-submenu>
-
       </el-menu>
     </el-col>
   </el-row>
 </template>
 
 <script>
-  import menu from '@/config/menu-config'
-  import Icon from '../../node_modules/vue-awesome/components/Icon.vue'
+  var menuData = require('../assets/menu.json')
+  // import Icon from '../../node_modules/vue-awesome/components/Icon.vue'
   export default {
-    components: {Icon},
+    // components: {Icon},
     data () {
       return {
-        menu: menu
+        menus: menuData
       }
     },
     methods: {
-      handleOpen (key, keyPath) {
-        console.log(key, keyPath)
-      },
-      handleClose (key, keyPath) {
-        console.log(key, keyPath)
-      }
     }
   }
 </script>
 <style scoped>
-  .over-hide{
-    overflow: hidden;
-  }
+  @import '../style/navmenu.css';
 </style>

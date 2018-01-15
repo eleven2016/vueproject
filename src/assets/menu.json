@@ -1,0 +1,60 @@
+[
+  {
+    "id": "basic",
+    "name": "basic",
+    "text": "基础element",
+    "subMenu":[
+      {
+        "id": "layout",
+        "name": "layout",
+        "text": "layout布局"
+      },
+      {
+        "id": "container",
+        "name": "container",
+        "text": "container容器"
+      },
+      {
+        "id": "font",
+        "name": "font",
+        "text": "字体"
+      }
+    ]
+  },
+  {
+    "id": "form",
+    "name": "form",
+    "text": "表单元素",
+    "subMenu":[
+      {
+        "id": "formBoard",
+        "name": "formBoard",
+        "text": "表单页面"
+      }
+    ]
+  },
+  {
+    "id": "data",
+    "name": "data",
+    "text": "数据元素",
+    "subMenu":[
+      {
+        "id": "dataBoard",
+        "name": "dataBoard",
+        "text": "数据页面"
+      }
+    ]
+  },
+  {
+    "id": "others",
+    "name": "others",
+    "text": "其他元素",
+    "subMenu":[
+      {
+        "id": "otherBoard",
+        "name": "otherBoard",
+        "text": "other页面"
+      }
+    ]
+  }
+]

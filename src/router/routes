@@ -1,12 +1,12 @@
 // 引用模板
-import menus from '@/config/menu-config'
+var menuData = require('../assets/menu.json')
 var routes = []
-menus.forEach((item) => {
-  item.sub.forEach((sub) => {
+menuData.forEach((item) => {
+  item.subMenu.forEach((menu) => {
     routes.push({
-      path: `/${sub.componentName}`,
-      name: sub.componentName,
-      component: () => import(`@/components/${sub.componentName}`)
+      path: `/${menu.id}`,
+      name: menu.name,
+      component: () => import(`@/components/${menu.id}`)
     })
   })
 })
