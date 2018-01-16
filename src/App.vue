@@ -1,42 +1,23 @@
 <template>
-  <div id="app">
-    <el-container :span="16">
-      <el-header class="header">
-        <container-header></container-header>
-      </el-header>
-      <el-container>
-        <el-aside width="200px">
-          <navmenu></navmenu>
-        </el-aside>
-        <el-container>
-          <el-main>
-            <router-view></router-view>
-          </el-main>
-          <el-footer>
-            <container-footer></container-footer>
-          </el-footer>
-        </el-container>
-      </el-container>
-    </el-container>
+  <div id="app" >
+    <div class="demo-app">
+      <login ></login>
+    </div>
+
   </div>
 </template>
 <script>
   // 引入本页面使用到的组件
-  import Header from '@/components/Header.vue'
-  import NavMenu from '@/components/NavMenu'
-  import Footer from '@/components/Footer'
+  import Login from '@/components/Login.vue'
   export default {
     // 定义本组件的名称
     name: 'app',
     // 定义本组件内使用到的组件的别名
     components: {
-      'navmenu': NavMenu,
-      'container-header': Header,
-      'container-footer': Footer
+      'login': Login
     }
   }
 </script>
-<!-- 导入自定义的css文件 -->
-<style scoped>
-  @import "style/app.css";
+<style>
+  @import './style/app.css';
 </style>

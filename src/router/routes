@@ -1,6 +1,10 @@
 // 引用模板
 var menuData = require('../assets/menu.json')
+
+// 路由列表
 var routes = []
+
+// 将菜单数据加入到路由列表中
 menuData.forEach((item) => {
   item.subMenu.forEach((menu) => {
     routes.push({
@@ -10,5 +14,12 @@ menuData.forEach((item) => {
     })
   })
 })
-// 配置路由
+
+// 配置登录页面跳转路由
+routes.push({
+  path: `/`,
+  name: 'home'
+})
+
+// 导出配置路由
 export default routes

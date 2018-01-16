@@ -1,5 +1,4 @@
-.header {
-  background-color: #409EFF;
-  color: #fff;
-  line-height: 60px;
+.demo-app{
+  background-image: url("../assets/login-background.jpg");
+  min-height: -webkit-fill-available;
 }

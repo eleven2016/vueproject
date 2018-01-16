@@ -1,0 +1,17 @@
+.demo-login-form{
+  padding-top: 20%;
+  padding-left: 30%;
+}
+
+.demo-login-form-label{
+   font-size: medium;
+  text-align: center;
+}
+
+.demo-login-form-label-margin-top{
+  margin-top: 20px;
+}
+
+.demo-login-form-button-margin-left{
+  margin-left: 20%;
+}
