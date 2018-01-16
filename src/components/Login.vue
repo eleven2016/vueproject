@@ -1,7 +1,6 @@
 <template>
   <div id="login" class="demo-login">
     <el-form :model="form" labelWidth="100px" labelPosition="right" size="small" class="demo-login-form">
-
       <el-row :span="8">
         <el-col :span="3" class="demo-login-form-label">
           用户名:
@@ -15,7 +14,7 @@
           <label >密码:</label>
         </el-col>
         <el-col :span="5" class="demo-login-form-label-margin-top">
-          <el-input v-model="form.password" class="demo-login-form-input"></el-input>
+          <el-input type="password" v-model="form.password" class="demo-login-form-input"></el-input>
         </el-col>
       </el-row>
       <el-row :span="4">
@@ -44,7 +43,8 @@
     },
     methods: {
       onSubmit () {
-        console.log('submit!')
+        // 页面跳转
+        this.$router.push('/index')
       }
     }
   }

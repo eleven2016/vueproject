@@ -1,13 +1,16 @@
-// 引用模板
+
+// 引入本页面使用到的组件
+import Login from '@/components/Login.vue'
+import MainPanel from '@/components/MainPanel.vue'
+// 引用数据
 var menuData = require('../assets/menu.json')
 
-// 路由列表
-var routes = []
-
+// 子路由表
+var subRoutes = []
 // 将菜单数据加入到路由列表中
 menuData.forEach((item) => {
   item.subMenu.forEach((menu) => {
-    routes.push({
+    subRoutes.push({
       path: `/${menu.id}`,
       name: menu.name,
       component: () => import(`@/components/${menu.id}`)
@@ -15,10 +18,20 @@ menuData.forEach((item) => {
   })
 })
 
+
+// 路由列表
+var routes = []
 // 配置登录页面跳转路由
 routes.push({
   path: `/`,
-  name: 'home'
+  name: 'login',
+  component: Login
+})
+routes.push({
+  path: '/index',
+  name: 'index',
+  component: MainPanel,
+  children: subRoutes
 })
 
 // 导出配置路由
