@@ -37,8 +37,6 @@ new Vue({
   el: '#app',
   // 使用路由
   router,
-  template: '<App/>',
-  components: { App },
-  // 使用render函数进行页面渲染,此处渲染的是App.vue模块
+  // 使用render函数进行页面渲染,使用render就不用components了
   render: (h) => h(App)
 })

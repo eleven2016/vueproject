@@ -1,7 +1,7 @@
 <template>
   <el-row class="tac">
     <el-col :span="24">
-      <el-menu class="el-menu-vertical-demo nav-menu"    unique-opened  router>
+      <el-menu class="el-menu-vertical-demo nav-menu" unique-opened router>
         <el-submenu v-for="item in menus" :index="item.id" :key="item.id">
           <template slot="title">
             <span v-text="item.text" class="el-icon-menu"></span>
@@ -25,7 +25,19 @@
         menus: menuData
       }
     },
+    created () {
+      // 组件创建完后获取数据，这里和1.0不一样，改成了这个样子
+      this.getMenus()
+    },
     methods: {
+      getMenus: function () {
+        var menusUrl = '/api/getMenus'
+        this.$http.post(menusUrl).then(function (result) {
+          console.log(result)
+        }, function (error) {
+          console.log(error)
+        })
+      }
     }
   }
 </script>

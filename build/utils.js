@@ -1,6 +1,7 @@
 'use strict'
 const path = require('path')
 const config = require('../config')
+// 引入extract-text-webpack-plugin插件，用来将css提取到单独的css文件中
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const packageConfig = require('../package.json')
 
@@ -11,13 +12,14 @@ exports.assetsPath = function (_path) {
 
   return path.posix.join(assetsSubDirectory, _path)
 }
-
+// 下面是导出cssLoaders的相关配置
 exports.cssLoaders = function (options) {
   options = options || {}
 
   const cssLoader = {
     loader: 'css-loader',
     options: {
+      // 是否开启cssmap，默认是false
       sourceMap: options.sourceMap
     }
   }

@@ -7,12 +7,16 @@ const sourceMapEnabled = isProduction
   : config.dev.cssSourceMap
 
 module.exports = {
+
+  // 加载各种loaders
   loaders: utils.cssLoaders({
     sourceMap: sourceMapEnabled,
     extract: isProduction
   }),
   cssSourceMap: sourceMapEnabled,
+  // 浏览器缓存相关的配置
   cacheBusting: config.dev.cacheBusting,
+  // 将属性变为必须的
   transformToRequire: {
     video: ['src', 'poster'],
     source: 'src',
