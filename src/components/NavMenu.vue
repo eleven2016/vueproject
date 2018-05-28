@@ -4,10 +4,10 @@
       <el-menu class="el-menu-vertical-demo nav-menu" unique-opened router>
         <el-submenu v-for="item in menus" :index="item.id" :key="item.id">
           <template slot="title">
-            <span v-text="item.text" class="el-icon-menu"></span>
+            <span v-text="item.menuName" class="el-icon-menu"></span>
           </template>
-          <el-menu-item-group class="over-hide" v-for="sub in item.subMenu" :key="sub.id">
-            <el-menu-item :index="sub.id" v-text="sub.text" class="el-icon-arrow-right"></el-menu-item>
+          <el-menu-item-group class="over-hide" v-for="sub in item.subMenus" :key="sub.id">
+            <el-menu-item :index="sub.id" v-text="sub.menuName" class="el-icon-arrow-right"></el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>
@@ -16,13 +16,13 @@
 </template>
 
 <script>
-  var menuData = require('../assets/menu.json')
+  // var menuData = require('../assets/menu.json')
   // import Icon from '../../node_modules/vue-awesome/components/Icon.vue'
   export default {
     // components: {Icon},
     data () {
       return {
-        menus: menuData
+        menus: []
       }
     },
     created () {
@@ -31,9 +31,9 @@
     },
     methods: {
       getMenus: function () {
-        var menusUrl = '/api/getMenus'
+        var menusUrl = '/api/menu/generateMenus'
         this.$http.post(menusUrl).then(function (result) {
-          console.log(result)
+          this.menus = result.data.data
         }, function (error) {
           console.log(error)
         })
