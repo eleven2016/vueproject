@@ -12,11 +12,21 @@ import routes from './router/routes'
 // 引入ElementUI及其样式
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'normalize.css'
+import 'vue-awesome/icons'
+import Icon from 'vue-awesome/components/Icon'
+import VueResource from 'vue-resource'
 
 // 使用VueRouter
 Vue.use(VueRouter)
 // 使用ElementUI
 Vue.use(ElementUI)
+// 使用vue-resource
+Vue.use(VueResource)
+// 定义全局的组件
+Vue.component('icon', Icon)
+// 设置为 false 以阻止 vue 在启动时生成生产提示。
+Vue.config.productionTip = false
 
 // 使用自定义的路由规则
 const router = new VueRouter({routes})
@@ -27,6 +37,6 @@ new Vue({
   el: '#app',
   // 使用路由
   router,
-  // 使用render函数进行页面渲染,此处渲染的是App.vue模块
+  // 使用render函数进行页面渲染,使用render就不用components了
   render: (h) => h(App)
 })

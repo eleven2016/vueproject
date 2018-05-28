@@ -1,0 +1,4 @@
+.demo-app{
+  background-image: url("../assets/login-background.jpg");
+  min-height: -webkit-fill-available;
+}

@@ -1,17 +1,37 @@
-// 引用模板
-import index from '../page/index.vue'
-import mainBorder from '../page/mainboard.vue'
-// 配置路由
-export default [
-  {
-    path: '/',
-    component: index,
-    children: [
-      {
-        path: '/mainBorder',
-        name: 'mainBorder',
-        component: mainBorder
-      }
-    ]
-  }
-]
+
+// 引入本页面使用到的组件
+import Login from '@/components/Login.vue'
+import MainPanel from '@/components/MainPanel.vue'
+// 引用数据
+var menuData = require('../assets/menu.json')
+
+// 子路由表
+var subRoutes = []
+// 将菜单数据加入到路由列表中
+menuData.forEach((item) => {
+  item.subMenu.forEach((menu) => {
+    subRoutes.push({
+      path: `/${menu.id}`,
+      name: menu.name,
+      component: () => import(`@/components/${menu.id}`)
+    })
+  })
+})
+
+// 路由列表
+var routes = []
+// 配置登录页面跳转路由
+routes.push({
+  path: `/`,
+  name: 'login',
+  component: Login
+})
+routes.push({
+  path: '/index',
+  name: 'index',
+  component: MainPanel,
+  children: subRoutes
+})
+
+// 导出配置路由
+export default routes

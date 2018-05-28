@@ -4,10 +4,12 @@ require('./check-versions')()
 process.env.NODE_ENV = 'production'
 
 const ora = require('ora')
+// rimraf插件是用来执行UNIX命令rm和-rf的用来删除文件夹和文件，清空旧的文件
 const rm = require('rimraf')
 const path = require('path')
 const chalk = require('chalk')
 const webpack = require('webpack')
+// 引入config下的index.js配置文件
 const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
 
@@ -15,7 +17,9 @@ const spinner = ora('building for production...')
 spinner.start()
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
+  // 如果删除的过程中出现错误，就抛出这个错误，同时程序终止
   if (err) throw err
+  // 没有错误，就执行webpack编译
   webpack(webpackConfig, (err, stats) => {
     spinner.stop()
     if (err) throw err

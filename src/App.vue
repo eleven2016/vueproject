@@ -1,5 +1,16 @@
 <template>
   <div>
-    <router-view  class="view"   keep-alive   transition   transition-mode="out-in"></router-view>
+    <div class="demo-app">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
+<script>
+  export default {
+    // 定义本组件的名称
+    name: 'app'
+  }
+</script>
+<style>
+  @import './style/app.css';
+</style>

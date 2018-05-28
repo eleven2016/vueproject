@@ -1,0 +1,20 @@
+.demo-container{
+  width: 60%;
+  margin-left: 20%;
+  min-height: -webkit-fill-available;
+}
+
+.demo-header {
+  background-color: #409EFF;
+  color: #fff;
+  line-height: 60px;
+}
+.demo-main{
+  background-color: aliceblue;
+}
+.demo-menu{
+  background-color: aliceblue;
+}
+.demo-footer{
+  background-color: aliceblue;
+}
