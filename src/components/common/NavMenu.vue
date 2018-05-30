@@ -1,13 +1,13 @@
 <template>
   <el-row class="tac">
     <el-col :span="24">
-      <el-menu class="el-menu-vertical-demo nav-menu" unique-opened router>
-        <el-submenu v-for="item in menus" :index="item.id" :key="item.id">
+      <el-menu class="el-menu-vertical-demo nav-menu" unique-opened :router="true">
+        <el-submenu v-for="item in menus" :index="item.menuName" :key="item.id">
           <template slot="title">
             <span v-text="item.menuName" class="el-icon-menu"></span>
           </template>
-          <el-menu-item-group class="over-hide" v-for="sub in item.subMenus" :key="sub.id">
-            <el-menu-item :index="sub.id" v-text="sub.menuName" class="el-icon-arrow-right"></el-menu-item>
+          <el-menu-item-group class="over-hide" v-for="subMenu in item.subMenus" :key="subMenu.id">
+            <el-menu-item  :index="subMenu.menuUrl" v-text="subMenu.menuName" class="el-icon-arrow-right"></el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>
@@ -42,5 +42,5 @@
   }
 </script>
 <style scoped>
-  @import '../style/navmenu.css';
+  @import '../../style/common/navmenu.css';
 </style>

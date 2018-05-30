@@ -6,5 +6,5 @@
   </el-row>
 </template>
 <style scoped>
-  @import "../style/footer.css";
+  @import "../../style/common/footer.css";
 </style>

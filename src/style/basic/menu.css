@@ -1,0 +1,18 @@
+.el-row {
+  margin-bottom: 20px;
+}
+.el-col {
+  border-radius: 4px;
+}
+.menu-table{
+  width: 100%;
+}
+.menu-button{
+  margin-left: 50%;
+}
+.el-form-item{
+  width: 50%;
+}
+.el-form-item-input{
+  width: 50%;
+}

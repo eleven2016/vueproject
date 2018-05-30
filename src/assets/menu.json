@@ -1,54 +1,13 @@
 [
   {
-    "id": "basic",
-    "name": "basic",
-    "text": "基础element",
-    "subMenu":[
+    "id":1,
+    "name": "基础配置",
+    "url":"basic",
+    "subMenus":[
       {
-        "id": "Layout",
-        "name": "Layout",
-        "text": "layout布局"
-      },
-      {
-        "id": "Container",
-        "name": "Container",
-        "text": "container容器"
-      }
-    ]
-  },
-  {
-    "id": "form",
-    "name": "form",
-    "text": "表单元素",
-    "subMenu":[
-      {
-        "id": "FormPanel",
-        "name": "FormPanel",
-        "text": "表单页面"
-      }
-    ]
-  },
-  {
-    "id": "data",
-    "name": "data",
-    "text": "数据元素",
-    "subMenu":[
-      {
-        "id": "DataPanel",
-        "name": "DataPanel",
-        "text": "数据页面"
-      }
-    ]
-  },
-  {
-    "id": "others",
-    "name": "others",
-    "text": "其他元素",
-    "subMenu":[
-      {
-        "id": "OtherPanel",
-        "name": "OtherPanel",
-        "text": "other页面"
+        "id":2,
+        "name": "菜单配置",
+        "url": "Menu"
       }
     ]
   }

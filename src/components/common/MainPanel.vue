@@ -6,7 +6,7 @@
       </el-header>
       <el-container>
         <el-aside width="200px" class="demo-menu">
-          <navmenu></navmenu>
+          <navMenu></navMenu>
         </el-aside>
         <el-container>
           <el-main class="demo-main">
@@ -22,15 +22,15 @@
 </template>
 <script>
   // 引入本页面使用到的组件
-  import Header from '@/components/Header.vue'
-  import NavMenu from '@/components/NavMenu'
-  import Footer from '@/components/Footer'
+  import Header from '@/components/common/Header.vue'
+  import NavMenu from '@/components/common/NavMenu'
+  import Footer from '@/components/common/Footer'
   export default {
     // 定义本组件的名称
     name: 'MainPanel',
     // 定义本组件内使用到的组件的别名
     components: {
-      'navmenu': NavMenu,
+      'navMenu': NavMenu,
       'container-header': Header,
       'container-footer': Footer
     }
@@ -38,5 +38,5 @@
 </script>
 <!-- 导入自定义的css文件 -->
 <style scoped>
-  @import "../style/MianPanel.css";
+  @import "../../style/common/MianPanel.css";
 </style>

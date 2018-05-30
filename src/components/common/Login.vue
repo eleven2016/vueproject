@@ -50,5 +50,5 @@
   }
 </script>
 <style>
-  @import "../style/login.css";
+  @import "../../style/common/login.css";
 </style>
