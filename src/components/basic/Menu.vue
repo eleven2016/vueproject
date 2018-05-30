@@ -130,7 +130,7 @@
           var thisTemplate = this
           if (result.data.success) {
             this.$message({
-              message: '添加菜单成功',
+              message: '编辑菜单成功',
               type: 'success'
             })
             this.editDialogVisible = false
