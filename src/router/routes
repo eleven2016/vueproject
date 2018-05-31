@@ -11,6 +11,9 @@ menuData.forEach((item) => {
     subRoutes.push({
       path: `/${menu.url}`,
       name: menu.name,
+      meta: {
+        requireAuth: true  // 添加该字段，表示进入这个路由是需要登录的
+      },
       component: () => import(`@/components/${item.url}/${menu.url}`)
     })
   })
@@ -27,6 +30,9 @@ routes.push({
 routes.push({
   path: '/index',
   name: 'index',
+  meta: {
+    requireAuth: true  // 添加该字段，表示进入这个路由是需要登录的
+  },
   component: MainPanel,
   children: subRoutes
 })
