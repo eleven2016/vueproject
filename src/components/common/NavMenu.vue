@@ -31,7 +31,7 @@
     },
     methods: {
       getMenus: function () {
-        var menusUrl = '/api/menu/generateMenus'
+        var menusUrl = '/api/menu/generateMenus?token=' + this.$store.getters.getToken
         this.$http.post(menusUrl).then(function (result) {
           this.menus = result.data.data
         }, function (error) {
