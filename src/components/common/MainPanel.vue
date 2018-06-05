@@ -1,6 +1,6 @@
 <template>
   <div id="MainPanel">
-    <el-container :span="16" class="demo-container">
+    <el-container :span="20" class="demo-container">
       <el-header class="demo-header">
         <container-header></container-header>
       </el-header>
