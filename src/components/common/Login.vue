@@ -47,6 +47,8 @@
         this.$http.post(url, this.model).then(function (result) {
           if (result.data.data) {
             this.$store.commit('setToken', result.data.data)
+            // 将token放在session中
+            sessionStorage.setItem('token', result.data.data)
             this.$router.push('/index')
           }
         }, function (error) {

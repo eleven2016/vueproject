@@ -1,7 +1,7 @@
 <template>
   <el-row class="tac">
     <el-col :span="24">
-      <el-menu class="el-menu-vertical-demo nav-menu" unique-opened :router="true">
+      <el-menu class="el-menu-vertical-demo nav-menu" unique-opened :router="true" >
         <el-submenu v-for="item in menus" :index="item.menuName" :key="item.id">
           <template slot="title">
             <span v-text="item.menuName" class="el-icon-menu"></span>

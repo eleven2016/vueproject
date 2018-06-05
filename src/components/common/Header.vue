@@ -46,7 +46,7 @@
       },
       onExit: function () {
         console.log('退出')
-        this.$store.commit('setToken', '')
+        this.$store.commit('cleanToken')
         this.$router.push('/')
       }
     }
